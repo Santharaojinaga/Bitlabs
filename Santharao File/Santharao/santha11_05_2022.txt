@@ -1,0 +1,657 @@
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 28
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use database;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> show dartabases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dartabases' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| abc                |
+| ananya             |
+| begginers          |
+| bhuvan             |
+| bischeduler        |
+| bischeduler1       |
+| chandu             |
+| classicmodels      |
+| college            |
+| db1                |
+| demo1              |
+| details            |
+| dhanekula          |
+| dharma             |
+| dinesh             |
+| ece                |
+| employee           |
+| employee_2         |
+| estudent           |
+| ganga              |
+| information_schema |
+| karun              |
+| keerthi            |
+| krishna            |
+| learners           |
+| leela              |
+| liliya             |
+| manideep           |
+| meghana            |
+| myproject          |
+| mysql              |
+| new_schema         |
+| performance_schema |
+| phani              |
+| practice           |
+| retail             |
+| sai3               |
+| sakila             |
+| shopping           |
+| siva               |
+| structure          |
+| student            |
+| students           |
+| suvarna            |
+| sys                |
+| teja               |
+| vanaja             |
+| vineela            |
+| vishnu             |
+| world              |
++--------------------+
+50 rows in set (0.00 sec)
+
+mysql> create database santha;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use santha;
+Database changed
+mysql> create child(sno int,Name varchar(10),Regestred_no int,Place varchar(12),Date_of_Birth date,Polio_vaction varchar(8));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'child(sno int,Name varchar(10),Regestred_no int,Place varchar(12),Date_of_Birth ' at line 1
+mysql> create table child(sno int,Name varchar(10),Regestred_no int,Place varchar(12),Date_of_Birth date,Polio_vaction varchar(8));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into child values(1,"Ram",123,"Srikakulam",20161201,"yes");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into child values(2,"Sam",124,"Srikakulam",20151112,"no");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into child values(3,"pavan",145,"Vijayawada",20161130,"yes");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into child values(4,"Ravi"654,"Vijayawada",20150226,"yes");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '654,"Vijayawada",20150226,"yes")' at line 1
+mysql> insert into child values(4,"Ravi",654,"Vijayawada",20150226,"yes");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into child values(5,"Rahul",786,"Srikakulam",20161208,"no");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into child values(6,"Kavya",908,"Srikakulam",20161207,"yes");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into child values(7,"Raj",190,"Vijayawada",20161208,"no");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into child values(8,"Sailu",564,"Vijayawada",20150605,"yes");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into child values(9,"Teja",560,"Srikakulam",20161207,"yes");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into child values(10,"Sailu",561,"Srikakulam",20150605,"yes");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc child;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| sno           | int         | YES  |     | NULL    |       |
+| Name          | varchar(10) | YES  |     | NULL    |       |
+| Regestred_no  | int         | YES  |     | NULL    |       |
+| Place         | varchar(12) | YES  |     | NULL    |       |
+| Date_of_Birth | date        | YES  |     | NULL    |       |
+| Polio_vaction | varchar(8)  | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * child;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'child' at line 1
+mysql> select * from child;
++------+-------+--------------+------------+---------------+---------------+
+| sno  | Name  | Regestred_no | Place      | Date_of_Birth | Polio_vaction |
++------+-------+--------------+------------+---------------+---------------+
+|    1 | Ram   |          123 | Srikakulam | 2016-12-01    | yes           |
+|    2 | Sam   |          124 | Srikakulam | 2015-11-12    | no            |
+|    3 | pavan |          145 | Vijayawada | 2016-11-30    | yes           |
+|    4 | Ravi  |          654 | Vijayawada | 2015-02-26    | yes           |
+|    5 | Rahul |          786 | Srikakulam | 2016-12-08    | no            |
+|    6 | Kavya |          908 | Srikakulam | 2016-12-07    | yes           |
+|    7 | Raj   |          190 | Vijayawada | 2016-12-08    | no            |
+|    8 | Sailu |          564 | Vijayawada | 2015-06-05    | yes           |
+|    9 | Teja  |          560 | Srikakulam | 2016-12-07    | yes           |
+|   10 | Sailu |          561 | Srikakulam | 2015-06-05    | yes           |
++------+-------+--------------+------------+---------------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select place from child;
++------------+
+| place      |
++------------+
+| Srikakulam |
+| Srikakulam |
+| Vijayawada |
+| Vijayawada |
+| Srikakulam |
+| Srikakulam |
+| Vijayawada |
+| Vijayawada |
+| Srikakulam |
+| Srikakulam |
++------------+
+10 rows in set (0.00 sec)
+
+mysql> select place from child where place="Srikakulam";
++------------+
+| place      |
++------------+
+| Srikakulam |
+| Srikakulam |
+| Srikakulam |
+| Srikakulam |
+| Srikakulam |
+| Srikakulam |
++------------+
+6 rows in set (0.01 sec)
+
+mysql> select Name and Place from child where place="Srikakulam";
++----------------+
+| Name and Place |
++----------------+
+|              0 |
+|              0 |
+|              0 |
+|              0 |
+|              0 |
+|              0 |
++----------------+
+6 rows in set, 6 warnings (0.00 sec)
+
+mysql> select Name from child where place="Srikakulam";
++-------+
+| Name  |
++-------+
+| Ram   |
+| Sam   |
+| Rahul |
+| Kavya |
+| Teja  |
+| Sailu |
++-------+
+6 rows in set (0.00 sec)
+
+mysql> select Name from child where name or place="Srikakulam";
++-------+
+| Name  |
++-------+
+| Ram   |
+| Sam   |
+| Rahul |
+| Kavya |
+| Teja  |
+| Sailu |
++-------+
+6 rows in set, 10 warnings (0.00 sec)
+
+mysql> select Name from child where place="Srikakulam",Name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',Name' at line 1
+mysql> select Name,Place from child where place="Srikakulam";
++-------+------------+
+| Name  | Place      |
++-------+------------+
+| Ram   | Srikakulam |
+| Sam   | Srikakulam |
+| Rahul | Srikakulam |
+| Kavya | Srikakulam |
+| Teja  | Srikakulam |
+| Sailu | Srikakulam |
++-------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select Name,Place from child where place="Vijayawada";
++-------+------------+
+| Name  | Place      |
++-------+------------+
+| pavan | Vijayawada |
+| Ravi  | Vijayawada |
+| Raj   | Vijayawada |
+| Sailu | Vijayawada |
++-------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select Name,Place,Date_of_Birth from child where Polio_vaction ="yes";
++-------+------------+---------------+
+| Name  | Place      | Date_of_Birth |
++-------+------------+---------------+
+| Ram   | Srikakulam | 2016-12-01    |
+| pavan | Vijayawada | 2016-11-30    |
+| Ravi  | Vijayawada | 2015-02-26    |
+| Kavya | Srikakulam | 2016-12-07    |
+| Sailu | Vijayawada | 2015-06-05    |
+| Teja  | Srikakulam | 2016-12-07    |
+| Sailu | Srikakulam | 2015-06-05    |
++-------+------------+---------------+
+7 rows in set (0.00 sec)
+
+mysql> select Place from child where Name="Sailu" and Polio_vaction="yes";
++------------+
+| Place      |
++------------+
+| Vijayawada |
+| Srikakulam |
++------------+
+2 rows in set (0.00 sec)
+
+mysql> select Name ,Place from child where Name="Sailu" and Polio_vaction="yes";
++-------+------------+
+| Name  | Place      |
++-------+------------+
+| Sailu | Vijayawada |
+| Sailu | Srikakulam |
++-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select Name ,Place from child where Name="Ram" and Polio_vaction="yes";
++------+------------+
+| Name | Place      |
++------+------------+
+| Ram  | Srikakulam |
++------+------------+
+1 row in set (0.00 sec)
+
+mysql> select Name ,Place from child where Regested_no=654,not Polio_vaction="yes";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',not Polio_vaction="yes"' at line 1
+mysql> select Name ,Place from child where not Polio_vaction="yes";
++-------+------------+
+| Name  | Place      |
++-------+------------+
+| Sam   | Srikakulam |
+| Rahul | Srikakulam |
+| Raj   | Vijayawada |
++-------+------------+
+3 rows in set (0.00 sec)
+
+mysql>  select name,place from child order by Regestered_no asc;
+ERROR 1054 (42S22): Unknown column 'Regestered_no' in 'order clause'
+mysql>  select name,place from child order by Regestred_no asc;
++-------+------------+
+| name  | place      |
++-------+------------+
+| Ram   | Srikakulam |
+| Sam   | Srikakulam |
+| pavan | Vijayawada |
+| Raj   | Vijayawada |
+| Teja  | Srikakulam |
+| Sailu | Srikakulam |
+| Sailu | Vijayawada |
+| Ravi  | Vijayawada |
+| Rahul | Srikakulam |
+| Kavya | Srikakulam |
++-------+------------+
+10 rows in set (0.00 sec)
+
+mysql>  select name,Regestred_no,place from child order by Regestred_no asc;
++-------+--------------+------------+
+| name  | Regestred_no | place      |
++-------+--------------+------------+
+| Ram   |          123 | Srikakulam |
+| Sam   |          124 | Srikakulam |
+| pavan |          145 | Vijayawada |
+| Raj   |          190 | Vijayawada |
+| Teja  |          560 | Srikakulam |
+| Sailu |          561 | Srikakulam |
+| Sailu |          564 | Vijayawada |
+| Ravi  |          654 | Vijayawada |
+| Rahul |          786 | Srikakulam |
+| Kavya |          908 | Srikakulam |
++-------+--------------+------------+
+10 rows in set (0.00 sec)
+
+mysql>  select name,Regestred_no,place from child order by Regestred_no desc;
++-------+--------------+------------+
+| name  | Regestred_no | place      |
++-------+--------------+------------+
+| Kavya |          908 | Srikakulam |
+| Rahul |          786 | Srikakulam |
+| Ravi  |          654 | Vijayawada |
+| Sailu |          564 | Vijayawada |
+| Sailu |          561 | Srikakulam |
+| Teja  |          560 | Srikakulam |
+| Raj   |          190 | Vijayawada |
+| pavan |          145 | Vijayawada |
+| Sam   |          124 | Srikakulam |
+| Ram   |          123 | Srikakulam |
++-------+--------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ubdate child;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ubdate child' at line 1
+mysql> ubdate child
+    -> ubdate child
+    -> ^C
+mysql> update child set place="Narasannapeta" where place="Srikakulam";
+ERROR 1406 (22001): Data too long for column 'Place' at row 1
+mysql> update child set place="Palasa" where place="Srikakulam";
+Query OK, 6 rows affected (0.00 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql> ubdate child;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ubdate child' at line 1
+mysql> select * from child;
++------+-------+--------------+------------+---------------+---------------+
+| sno  | Name  | Regestred_no | Place      | Date_of_Birth | Polio_vaction |
++------+-------+--------------+------------+---------------+---------------+
+|    1 | Ram   |          123 | Palasa     | 2016-12-01    | yes           |
+|    2 | Sam   |          124 | Palasa     | 2015-11-12    | no            |
+|    3 | pavan |          145 | Vijayawada | 2016-11-30    | yes           |
+|    4 | Ravi  |          654 | Vijayawada | 2015-02-26    | yes           |
+|    5 | Rahul |          786 | Palasa     | 2016-12-08    | no            |
+|    6 | Kavya |          908 | Palasa     | 2016-12-07    | yes           |
+|    7 | Raj   |          190 | Vijayawada | 2016-12-08    | no            |
+|    8 | Sailu |          564 | Vijayawada | 2015-06-05    | yes           |
+|    9 | Teja  |          560 | Palasa     | 2016-12-07    | yes           |
+|   10 | Sailu |          561 | Palasa     | 2015-06-05    | yes           |
++------+-------+--------------+------------+---------------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select min(regestred_no) from child;
++-------------------+
+| min(regestred_no) |
++-------------------+
+|               123 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select max(regestred_no) from child;
++-------------------+
+| max(regestred_no) |
++-------------------+
+|               908 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(Date_of_Birth) from child;
++--------------------+
+| avg(Date_of_Birth) |
++--------------------+
+|      20156970.9000 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(sno) from child;
++----------+
+| sum(sno) |
++----------+
+|       55 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> create database Santha1;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use Santha1;
+Database changed
+mysql> create table salespeople(snum int(5),sname varchar(10),city varchar(10),comm float(3.2));
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+mysql> insert into salespeople values(1001,"peel","London",0.2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into salespeople values(1002,"serres","sanjose",0.13);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into salespeople values(1003,"Axle Rod","New York",0.10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into salespeople values(1004,"Motika","London",0.11);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into salespeople values(1006,"Balls","London",0.13);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into salespeople values(1007,"Shirts","India",0.14);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from  salesPeople;
++------+----------+----------+------+
+| snum | sname    | city     | comm |
++------+----------+----------+------+
+| 1001 | peel     | London   |  0.2 |
+| 1002 | serres   | sanjose  | 0.13 |
+| 1003 | Axle Rod | New York |  0.1 |
+| 1004 | Motika   | London   | 0.11 |
+| 1006 | Balls    | London   | 0.13 |
+| 1007 | Shirts   | India    | 0.14 |
++------+----------+----------+------+
+6 rows in set (0.00 sec)
+
+mysql> create table custmer(cnum int(8),cname varchar(10),city varchar(15),rating int(5),salno int(5));
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
+mysql> insret into custmer values(101,"Ram","Srikakulam",4,1123);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insret into custmer values(101,"Ram","Srikakulam",4,1123)' at line 1
+mysql> insert into custmer values(101,"Ram","Srikakulam",4,1123);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(102,"Sam","Vijayawada",5,1124);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(103,"Pavan","Vizag",5,1125);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(104,"Ravi","Vizag",3,1126);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(105,"Raj","Srikakulam",5,1127);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(106,"Rahul","VIjayawada",4,1129);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(107,"Chiru","Srikakulam",5,1130);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from custmer;
++------+-------+------------+--------+-------+
+| cnum | cname | city       | rating | salno |
++------+-------+------------+--------+-------+
+|  101 | Ram   | Srikakulam |      4 |  1123 |
+|  102 | Sam   | Vijayawada |      5 |  1124 |
+|  103 | Pavan | Vizag      |      5 |  1125 |
+|  104 | Ravi  | Vizag      |      3 |  1126 |
+|  105 | Raj   | Srikakulam |      5 |  1127 |
+|  106 | Rahul | VIjayawada |      4 |  1129 |
+|  107 | Chiru | Srikakulam |      5 |  1130 |
++------+-------+------------+--------+-------+
+7 rows in set (0.00 sec)
+
+mysql> create table order(Order_no int(10),amount int(10),order_date date,custmer_no int(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order(Order_no int(10),amount int(10),order_date date,custmer_no int(10))' at line 1
+mysql> create table Order(Order_no int(10),amount int(10),order_date date,custmer_no int(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Order(Order_no int(10),amount int(10),order_date date,custmer_no int(10))' at line 1
+mysql> create table Order(Order_no int(10),amount int(10),Orderdate date,custmer_no int(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Order(Order_no int(10),amount int(10),Orderdate date,custmer_no int(10))' at line 1
+mysql> create table Order(Order_num int(10),amount int(10),Orderdate date,custmer_num int(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Order(Order_num int(10),amount int(10),Orderdate date,custmer_num int(10))' at line 1
+mysql> delete from custmer;
+Query OK, 7 rows affected (0.01 sec)
+
+mysql> create table salespeople(snum int(5),sname varchar(10),city varchar(10),comm float(3.2));
+ERROR 1050 (42S01): Table 'salespeople' already exists
+mysql> create table custmer(cnum int(8),cname varchar(10),city varchar(15),rating int(5),sno int(5));
+ERROR 1050 (42S01): Table 'custmer' already exists
+mysql> desc custmer;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| cnum   | int         | YES  |     | NULL    |       |
+| cname  | varchar(10) | YES  |     | NULL    |       |
+| city   | varchar(15) | YES  |     | NULL    |       |
+| rating | int         | YES  |     | NULL    |       |
+| salno  | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insret into custmer values(101,"Ram","Srikakulam",4,1001);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insret into custmer values(101,"Ram","Srikakulam",4,1001)' at line 1
+mysql> insert into custmer values(101,"Ram","Srikakulam",4,1001);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(102,"Sam","Vijayawada",5,1002);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into custmer values(103,"Pavan","Vizag",5,1003);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into custmer values(104,"Ravi","Vizag",3,1004);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(105,"Raj","Srikakulam",5,1005);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(106,"Rahul","VIjayawada",4,1006);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into custmer values(107,"Chiru","Srikakulam",5,1007);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from custmer;
++------+-------+------------+--------+-------+
+| cnum | cname | city       | rating | salno |
++------+-------+------------+--------+-------+
+|  101 | Ram   | Srikakulam |      4 |  1001 |
+|  102 | Sam   | Vijayawada |      5 |  1002 |
+|  103 | Pavan | Vizag      |      5 |  1003 |
+|  104 | Ravi  | Vizag      |      3 |  1004 |
+|  105 | Raj   | Srikakulam |      5 |  1005 |
+|  106 | Rahul | VIjayawada |      4 |  1006 |
+|  107 | Chiru | Srikakulam |      5 |  1007 |
++------+-------+------------+--------+-------+
+7 rows in set (0.01 sec)
+
+mysql> alter table custmer add address varchar(220);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc custmer;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| cnum    | int          | YES  |     | NULL    |       |
+| cname   | varchar(10)  | YES  |     | NULL    |       |
+| city    | varchar(15)  | YES  |     | NULL    |       |
+| rating  | int          | YES  |     | NULL    |       |
+| salno   | int          | YES  |     | NULL    |       |
+| address | varchar(220) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table custmer drop alter addressvarchar(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter addressvarchar(50)' at line 1
+mysql> alter table custmer drop alter address varchar(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter address varchar(50)' at line 1
+mysql> alter table custmer drop address varchar(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varchar(50)' at line 1
+mysql> alter table custmer drop address;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc custmer;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| cnum   | int         | YES  |     | NULL    |       |
+| cname  | varchar(10) | YES  |     | NULL    |       |
+| city   | varchar(15) | YES  |     | NULL    |       |
+| rating | int         | YES  |     | NULL    |       |
+| salno  | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> alter table custmer modify city varchar(100);
+Query OK, 7 rows affected (0.06 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> desc custmer;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| cnum   | int          | YES  |     | NULL    |       |
+| cname  | varchar(10)  | YES  |     | NULL    |       |
+| city   | varchar(100) | YES  |     | NULL    |       |
+| rating | int          | YES  |     | NULL    |       |
+| salno  | int          | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> create table Order(Order_no int(10),amount int(10),Orderdate date,cnum int(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Order(Order_no int(10),amount int(10),Orderdate date,cnum int(10))' at line 1
+mysql> create table Order(Onum int(10),amount int(10),Order_date date,cnum int(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Order(Onum int(10),amount int(10),Order_date date,cnum int(10))' at line 1
+mysql> create table Orders(Onum int(10),amount int(10),Order_date date,cnum int(10));
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
+mysql> insert into Orders values(01,1000,20220501,101);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Orders values(02,1500,20220502,102);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Orders values(03,2000,20220503,103);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Orders values(04,2500,20220504,104);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Orders values(05,3000,20220505,105);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Orders values(06,3500,20220506,106);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into Orders values(07,4000,20220507,107);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Order;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Order' at line 1
+mysql> select * from Orders;
++------+--------+------------+------+
+| Onum | amount | Order_date | cnum |
++------+--------+------------+------+
+|    1 |   1000 | 2022-05-01 |  101 |
+|    2 |   1500 | 2022-05-02 |  102 |
+|    3 |   2000 | 2022-05-03 |  103 |
+|    4 |   2500 | 2022-05-04 |  104 |
+|    5 |   3000 | 2022-05-05 |  105 |
+|    6 |   3500 | 2022-05-06 |  106 |
+|    7 |   4000 | 2022-05-07 |  107 |
++------+--------+------------+------+
+7 rows in set (0.00 sec)
+
+mysql> select Onum Orders where cusstmer cnum == Orders.cnum and  amount =1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cnum == Orders.cnum and  amount =1000' at line 1
+mysql> select Onum Orders where cusstmer cnum==Orders.cnum and amount=1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cnum==Orders.cnum and amount=1000' at line 1
+mysql>

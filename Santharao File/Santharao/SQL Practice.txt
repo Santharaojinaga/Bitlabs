@@ -1,0 +1,197 @@
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 74
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database student;
+ERROR 1007 (HY000): Can't create database 'student'; database exists
+mysql> use student
+Database changed
+mysql> create table student details(Name varChar(15),Roll int(5),Subjects varChar(10),Marks int(3),Percentage float(3));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'details(Name varChar(15),Roll int(5),Subjects varChar(10),Marks int(3),Percentag' at line 1
+mysql> create table Mech(roll int,Name varchar(15),Subject varchar(10),Marks int,percentage float);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desk table Mech;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desk table Mech' at line 1
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> use student;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_student |
++-------------------+
+| eee               |
+| mech              |
+| studentdetails    |
++-------------------+
+3 rows in set (0.00 sec)
+
+mysql> desc Mech;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| roll       | int         | YES  |     | NULL    |       |
+| Name       | varchar(15) | YES  |     | NULL    |       |
+| Subject    | varchar(10) | YES  |     | NULL    |       |
+| Marks      | int         | YES  |     | NULL    |       |
+| percentage | float       | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create table Details(id int, Name varchar(10),city varchar(5),Age int,Date of birth date(10),Grade varchar(5),Gender varchar(8));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'of birth date(10),Grade varchar(5),Gender varchar(8))' at line 1
+mysql> create table Details(id int, Name varchar(10),city varchar(5),Age int,Date_of_birth date(10),Grade varchar(5),Gender varchar(8));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(10),Grade varchar(5),Gender varchar(8))' at line 1
+mysql> create table Details(id int, Name varchar(10),city varchar(5),Age int,Date_of_birth date ,Grade varchar(5);Gender varchar(8));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Gender varchar(8))' at line 1
+mysql> create table Details(id int, Name varchar(10),city varchar(5),Age int,Date_of_birth date ,Grade varchar(5),Gender varchar(8));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc Details
+    -> desc Details;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc Details' at line 2
+mysql> desc Details;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| id            | int         | YES  |     | NULL    |       |
+| Name          | varchar(10) | YES  |     | NULL    |       |
+| city          | varchar(5)  | YES  |     | NULL    |       |
+| Age           | int         | YES  |     | NULL    |       |
+| Date_of_birth | date        | YES  |     | NULL    |       |
+| Grade         | varchar(5)  | YES  |     | NULL    |       |
+| Gender        | varchar(8)  | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> insert into Details values(143,"Santha","Srikakulam",23,"1999-01-06","A","Male");
+ERROR 1406 (22001): Data too long for column 'city' at row 1
+mysql> insert into Details values(143,"Santha","Sklm",23,"1999-01-06","A","Male");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Details values(143,"Santha","Sklm",23,"1999-01-06","A","Male");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from Details;
++------+--------+------+------+---------------+-------+--------+
+| id   | Name   | city | Age  | Date_of_birth | Grade | Gender |
++------+--------+------+------+---------------+-------+--------+
+|  143 | Santha | Sklm |   23 | 1999-01-06    | A     | Male   |
+|  143 | Santha | Sklm |   23 | 1999-01-06    | A     | Male   |
++------+--------+------+------+---------------+-------+--------+
+2 rows in set (0.00 sec)
+
+mysql> create data base Employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'data base Employee' at line 1
+mysql> create table Employee
+    -> create table Employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table Employee' at line 2
+mysql> use student;
+Database changed
+mysql> create table employee;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table employee(Name varchar(10),Regesteredno int(8),Salary int,Location varchar(15));
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+mysql> desk Employee
+    -> desk Employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desk Employee
+desk Employee' at line 1
+mysql> show table
+    -> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show table' at line 2
+mysql> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> desk Employee
+    ->
+    -> desk Employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desk Employee
+
+desk Employee' at line 1
+mysql> desk Employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desk Employee' at line 1
+mysql> show employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'employee' at line 1
+mysql> use emplyoee;
+ERROR 1049 (42000): Unknown database 'emplyoee'
+mysql> show tables;
++-------------------+
+| Tables_in_student |
++-------------------+
+| details           |
+| eee               |
+| employee          |
+| mech              |
+| studentdetails    |
+| students1         |
++-------------------+
+6 rows in set (0.01 sec)
+
+mysql> desc Employee;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Name         | varchar(10) | YES  |     | NULL    |       |
+| Regesteredno | int         | YES  |     | NULL    |       |
+| Salary       | int         | YES  |     | NULL    |       |
+| Location     | varchar(15) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> insret into Employee (Name varchar(10),Regesteredno int,Salary int,Location varchar(15))value("Ram",123,10000,"Srikakulam"),("Sai",321,15000,"Vizag"),("Santha",145,20000,"Vijayawada");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insret into Employee (Name varchar(10),Regesteredno int,Salary int,Location varc' at line 1
+mysql> insret into Employee (Name varChar(10),Regesteredno int,Salary int,Location varChar(15))value("Ram",123,10000,"Srikakulam"),("Sai",321,15000,"Vizag"),("Santha",145,20000,"Vijayawada");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insret into Employee (Name varChar(10),Regesteredno int,Salary int,Location varC' at line 1
+mysql> insret into Employee ("Santha",145,20000,"Vijayawada");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insret into Employee ("Santha",145,20000,"Vijayawada")' at line 1
+mysql> insret into Employee values("Santha",145,20000,"Vijayawada");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insret into Employee values("Santha",145,20000,"Vijayawada")' at line 1
+mysql> insert into Employee values("Ram",123,10000,"Srikakulam");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from Employee;
++------+--------------+--------+------------+
+| Name | Regesteredno | Salary | Location   |
++------+--------------+--------+------------+
+| Ram  |          123 |  10000 | Srikakulam |
++------+--------------+--------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Employee values("Sai",145,20000,"Srikakulam");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Employee values("Pavan",168,25000,"Srikakulam");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Employee values("Chiru",789,15000,"Vijayawada");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Employee values("Sagar",369,10000,"Vijayawada");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into Employee values("Chiru",852,20000,"Srikakulam");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from Employee;
++-------+--------------+--------+------------+
+| Name  | Regesteredno | Salary | Location   |
++-------+--------------+--------+------------+
+| Ram   |          123 |  10000 | Srikakulam |
+| Sai   |          145 |  20000 | Srikakulam |
+| Pavan |          168 |  25000 | Srikakulam |
+| Chiru |          789 |  15000 | Vijayawada |
+| Sagar |          369 |  10000 | Vijayawada |
+| Chiru |          852 |  20000 | Srikakulam |
++-------+--------------+--------+------------+
+6 rows in set (0.00 sec)

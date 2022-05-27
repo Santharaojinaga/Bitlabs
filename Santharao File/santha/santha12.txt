@@ -1,0 +1,325 @@
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 56
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use database santha1
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use database Santha1;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| abc                |
+| ananya             |
+| anna               |
+| bandidinesh        |
+| begginers          |
+| bhuvan             |
+| bischeduler        |
+| bischeduler1       |
+| bitlabs            |
+| bitlabs1           |
+| c20                |
+| chandu             |
+| classicmodels      |
+| college            |
+| customer           |
+| db1                |
+| demo1              |
+| details            |
+| dhanekula          |
+| dharma             |
+| dinesh             |
+| ece                |
+| ecommerse          |
+| employee           |
+| employee_2         |
+| estudent           |
+| excercise          |
+| gagan              |
+| ganga              |
+| information_schema |
+| karun              |
+| keerthi            |
+| krishna            |
+| learners           |
+| leela              |
+| liliya             |
+| manideep           |
+| marketpersons      |
+| meghana            |
+| myproject          |
+| mysql              |
+| new_schema         |
+| orders             |
+| performance_schema |
+| phani              |
+| practice           |
+| retail             |
+| sai3               |
+| sakila             |
+| sales              |
+| salespeople        |
+| santha             |
+| santha1            |
+| shopping           |
+| siva               |
+| structure          |
+| student            |
+| students           |
+| suvarna            |
+| sys                |
+| teja               |
+| vanaja             |
+| vineela            |
+| vineela1           |
+| vishnu             |
+| world              |
++--------------------+
+66 rows in set (0.01 sec)
+
+mysql> use santha1;
+Database changed
+mysql> select * from salesPeople;
++------+----------+----------+------+
+| snum | sname    | city     | comm |
++------+----------+----------+------+
+| 1001 | peel     | London   |  0.2 |
+| 1002 | serres   | sanjose  | 0.13 |
+| 1003 | Axle Rod | New York |  0.1 |
+| 1004 | Motika   | London   | 0.11 |
+| 1006 | Balls    | London   | 0.13 |
+| 1007 | Shirts   | India    | 0.14 |
++------+----------+----------+------+
+6 rows in set (0.00 sec)
+
+mysql> select * from custmer;
++------+-------+------------+--------+-------+
+| cnum | cname | city       | rating | salno |
++------+-------+------------+--------+-------+
+|  101 | Ram   | Srikakulam |      4 |  1001 |
+|  102 | Sam   | Vijayawada |      5 |  1002 |
+|  103 | Pavan | Vizag      |      5 |  1003 |
+|  104 | Ravi  | Vizag      |      3 |  1004 |
+|  105 | Raj   | Srikakulam |      5 |  1005 |
+|  106 | Rahul | VIjayawada |      4 |  1006 |
+|  107 | Chiru | Srikakulam |      5 |  1007 |
++------+-------+------------+--------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select * from orders;
++------+--------+------------+------+
+| Onum | amount | Order_date | cnum |
++------+--------+------------+------+
+|    1 |   1000 | 2022-05-01 |  101 |
+|    2 |   1500 | 2022-05-02 |  102 |
+|    3 |   2000 | 2022-05-03 |  103 |
+|    4 |   2500 | 2022-05-04 |  104 |
+|    5 |   3000 | 2022-05-05 |  105 |
+|    6 |   3500 | 2022-05-06 |  106 |
+|    7 |   4000 | 2022-05-07 |  107 |
++------+--------+------------+------+
+7 rows in set (0.00 sec)
+
+mysql> select amount from orders where amount>1500 having min(amount);
++--------+
+| amount |
++--------+
+|   2000 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select amount from orders where amount>1500 having max(amount);
++--------+
+| amount |
++--------+
+|   2000 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select amount from orders where amount>1500 having avg(amount);
++--------+
+| amount |
++--------+
+|   2000 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select * from orders where amount>1500 having avg(amount);
++------+--------+------------+------+
+| Onum | amount | Order_date | cnum |
++------+--------+------------+------+
+|    3 |   2000 | 2022-05-03 |  103 |
++------+--------+------------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from orders where amount>1500 having avg(onum);
++------+--------+------------+------+
+| Onum | amount | Order_date | cnum |
++------+--------+------------+------+
+|    3 |   2000 | 2022-05-03 |  103 |
++------+--------+------------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from orders;
++------+--------+------------+------+
+| Onum | amount | Order_date | cnum |
++------+--------+------------+------+
+|    1 |   1000 | 2022-05-01 |  101 |
+|    2 |   1500 | 2022-05-02 |  102 |
+|    3 |   2000 | 2022-05-03 |  103 |
+|    4 |   2500 | 2022-05-04 |  104 |
+|    5 |   3000 | 2022-05-05 |  105 |
+|    6 |   3500 | 2022-05-06 |  106 |
+|    7 |   4000 | 2022-05-07 |  107 |
++------+--------+------------+------+
+7 rows in set (0.01 sec)
+
+mysql> select amount from orders groupby onum having sum(amount)>1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'onum having sum(amount)>1000' at line 1
+mysql> select amount from orders groupby amount having sum(amount)>1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'amount having sum(amount)>1000' at line 1
+mysql> select amount from orders groupby cnum having sum(amount)>1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cnum having sum(amount)>1000' at line 1
+mysql> select amount from orders groupby amount having sum(amount)>1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'amount having sum(amount)>1000' at line 1
+mysql> select amount from orders groupby amount having count(amount)>1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'amount having count(amount)>1000' at line 1
+mysql> select cnum from orders groupby amount having count(amount)>1000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'amount having count(amount)>1000' at line 1
+mysql> select * from custmer;
++------+-------+------------+--------+-------+
+| cnum | cname | city       | rating | salno |
++------+-------+------------+--------+-------+
+|  101 | Ram   | Srikakulam |      4 |  1001 |
+|  102 | Sam   | Vijayawada |      5 |  1002 |
+|  103 | Pavan | Vizag      |      5 |  1003 |
+|  104 | Ravi  | Vizag      |      3 |  1004 |
+|  105 | Raj   | Srikakulam |      5 |  1005 |
+|  106 | Rahul | VIjayawada |      4 |  1006 |
+|  107 | Chiru | Srikakulam |      5 |  1007 |
++------+-------+------------+--------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table custmer add snum int;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from custmer;
++------+-------+------------+--------+-------+------+
+| cnum | cname | city       | rating | salno | snum |
++------+-------+------------+--------+-------+------+
+|  101 | Ram   | Srikakulam |      4 |  1001 | NULL |
+|  102 | Sam   | Vijayawada |      5 |  1002 | NULL |
+|  103 | Pavan | Vizag      |      5 |  1003 | NULL |
+|  104 | Ravi  | Vizag      |      3 |  1004 | NULL |
+|  105 | Raj   | Srikakulam |      5 |  1005 | NULL |
+|  106 | Rahul | VIjayawada |      4 |  1006 | NULL |
+|  107 | Chiru | Srikakulam |      5 |  1007 | NULL |
++------+-------+------------+--------+-------+------+
+7 rows in set (0.00 sec)
+
+mysql> update custmer set snum= 1001 where salno=1001;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update custmer set snum= 1002 where salno=1002;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update custmer set snum= 1003 where salno=1003;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update custmer set snum= 1004 where salno=1004;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update custmer set snum= 1005 where salno=1005;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update custmer set snum= 1006 where salno=1006;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update custmer set snum= 1007 where salno=1007;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from custmer;
++------+-------+------------+--------+-------+------+
+| cnum | cname | city       | rating | salno | snum |
++------+-------+------------+--------+-------+------+
+|  101 | Ram   | Srikakulam |      4 |  1001 | 1001 |
+|  102 | Sam   | Vijayawada |      5 |  1002 | 1002 |
+|  103 | Pavan | Vizag      |      5 |  1003 | 1003 |
+|  104 | Ravi  | Vizag      |      3 |  1004 | 1004 |
+|  105 | Raj   | Srikakulam |      5 |  1005 | 1005 |
+|  106 | Rahul | VIjayawada |      4 |  1006 | 1006 |
+|  107 | Chiru | Srikakulam |      5 |  1007 | 1007 |
++------+-------+------------+--------+-------+------+
+7 rows in set (0.00 sec)
+
+mysql> alter table custmer drop column salno;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from custmer;
++------+-------+------------+--------+------+
+| cnum | cname | city       | rating | snum |
++------+-------+------------+--------+------+
+|  101 | Ram   | Srikakulam |      4 | 1001 |
+|  102 | Sam   | Vijayawada |      5 | 1002 |
+|  103 | Pavan | Vizag      |      5 | 1003 |
+|  104 | Ravi  | Vizag      |      3 | 1004 |
+|  105 | Raj   | Srikakulam |      5 | 1005 |
+|  106 | Rahul | VIjayawada |      4 | 1006 |
+|  107 | Chiru | Srikakulam |      5 | 1007 |
++------+-------+------------+--------+------+
+7 rows in set (0.00 sec)
+
+mysql> select * from salesPeople;
++------+----------+----------+------+
+| snum | sname    | city     | comm |
++------+----------+----------+------+
+| 1001 | peel     | London   |  0.2 |
+| 1002 | serres   | sanjose  | 0.13 |
+| 1003 | Axle Rod | New York |  0.1 |
+| 1004 | Motika   | London   | 0.11 |
+| 1006 | Balls    | London   | 0.13 |
+| 1007 | Shirts   | India    | 0.14 |
++------+----------+----------+------+
+6 rows in set (0.01 sec)
+
+mysql> select * from custmer where rating=5;
++------+-------+------------+--------+------+
+| cnum | cname | city       | rating | snum |
++------+-------+------------+--------+------+
+|  102 | Sam   | Vijayawada |      5 | 1002 |
+|  103 | Pavan | Vizag      |      5 | 1003 |
+|  105 | Raj   | Srikakulam |      5 | 1005 |
+|  107 | Chiru | Srikakulam |      5 | 1007 |
++------+-------+------------+--------+------+
+4 rows in set (0.01 sec)
+
+mysql> select * from custmer where city="null";
+Empty set (0.00 sec)
+
+mysql> select a.onum,max(a.amount),a.order_date,a.cnum,b.snum from orders a,custmer b where a.cvnum=b.cnum group by b,sum,a.odate;
+ERROR 1054 (42S22): Unknown column 'a.cvnum' in 'where clause'
+mysql> select a.onum,max(a.amount),a.order_date,a.cnum,b.snum from orders a,custmer b where a.cnum=b.cnum group by b,sum,a.odate;
+ERROR 1054 (42S22): Unknown column 'b' in 'group statement'
+mysql> select a.onum,max(a.amount),a.order_date,a.cnum,b.snum from orders a,custmer b where a.cnum=b.cnum group by b,sum,a.order_date;
+ERROR 1054 (42S22): Unknown column 'b' in 'group statement'
+mysql>
